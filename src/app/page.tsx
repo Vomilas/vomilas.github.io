@@ -1,4 +1,10 @@
-import { Header, Welcome, SocialMedia, EmailAddressBar } from "../components";
+import {
+  Header,
+  Welcome,
+  SocialMedia,
+  EmailAddressBar,
+  AboutMe,
+} from "../components";
 
 export default function Home() {
   return (
@@ -7,6 +13,7 @@ export default function Home() {
       <Welcome />
       <SocialMedia />
       <EmailAddressBar />
+      <AboutMe />
     </main>
   );
 }
