@@ -8,6 +8,11 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        lato: ["Lato", "sans-serif"],
+        playfair: ["Playfair Display", "serif"],
+        arimo: ["Arimo", "sans-serif"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
