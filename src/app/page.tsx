@@ -4,6 +4,7 @@ import {
   SocialMedia,
   EmailAddressBar,
   AboutMe,
+  Experience,
 } from "../components";
 
 export default function Home() {
@@ -14,6 +15,7 @@ export default function Home() {
       <SocialMedia />
       <EmailAddressBar />
       <AboutMe />
+      <Experience />
     </main>
   );
 }
