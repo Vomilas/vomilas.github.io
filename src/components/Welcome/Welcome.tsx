@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+import { Button } from "../ui/button";
+
 export const Welcome = memo(() => {
   return (
     <div className="h-full flex flex-col justify-center px-8 2xl:px-72 xl:px-56 lg:px-32  md:px-28 sm:px-8 py-32 sm:pt-72 sm:pb-48">
@@ -21,9 +23,7 @@ export const Welcome = memo(() => {
         <span className="text-secondary">web-applications</span>.
       </h3>
       <div className="mt-12">
-        <button className="bg-primary text-secondary border rounded px-4 sm:px-8 py-3 sm:py-4 border-secondary">
-          Check out my resume!
-        </button>
+        <Button>Check out my resume!</Button>
       </div>
     </div>
   );
