@@ -1,5 +1,7 @@
 import { memo } from "react";
 
+import { Button } from "@/components/ui/button";
+
 const menuItems = ["About", "Experience", "Work", "Contact"];
 
 export const DesktopMenu = memo(() => {
@@ -13,9 +15,7 @@ export const DesktopMenu = memo(() => {
           </span>
         </div>
       ))}
-      <button className="text-secondary border border-spacing-2 py-2 px-3 rounded-sm border-secondary">
-        Resume
-      </button>
+      <Button size="sm"> Resume</Button>
     </div>
   );
 });
