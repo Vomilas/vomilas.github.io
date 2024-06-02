@@ -1,8 +1,7 @@
 import { memo } from "react";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 import { ArrowIcon } from "../icons";
-
-import { CompaniesBar } from "./CompaniesBar";
 
 export const Experience = memo(() => {
   return (
@@ -27,7 +26,18 @@ export const Experience = memo(() => {
         className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0
       justify-center md:justify-center items-center md:items-start "
       >
-        <CompaniesBar />
+        <Tabs
+          defaultValue="account"
+          className="flex space-x-8 w-[600px]"
+          orientation="vertical"
+        >
+          <TabsList>
+            <TabsTrigger value="kaspersky">Kaspersky Lab</TabsTrigger>
+            <TabsTrigger value="ibs">IBS</TabsTrigger>
+          </TabsList>
+          <TabsContent value="account">Kaspersky description</TabsContent>
+          <TabsContent value="password">IBS description</TabsContent>
+        </Tabs>
       </section>
     </div>
   );
