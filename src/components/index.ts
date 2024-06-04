@@ -4,3 +4,4 @@ export * from "./SocialMedia";
 export * from "./EmailAddressBar";
 export * from "./AboutMe";
 export * from "./Experience";
+export * from "./Portfolio";
