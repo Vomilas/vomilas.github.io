@@ -2,6 +2,7 @@ import { memo } from "react";
 import Image from "next/image";
 
 import { ArrowIcon } from "../icons";
+import { SectionTitle } from "../SectionTitle";
 
 const technologies = [
   ["Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Ether.js", "Solidity"],
@@ -15,23 +16,7 @@ export const AboutMe = memo(() => {
         className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px]
         md:w-[700px] lg:w-[900px] "
       >
-        <div className="flex flex-row items-center ">
-          <div className="flex flex-row  items-center mr-4">
-            <ArrowIcon
-              className={
-                "flex-none h-4 md:h-6 w-4 md:w-5 translate-y-[0.5px] text-secondary"
-              }
-            />
-            <span className="text-secondary font-Header text-sm  sm:text-xl">
-              {" "}
-              01.
-            </span>
-            <span className="flex-none text-gray-200 opacity-85 font-bold tracking-wider text-lg sm:text-2xl pl-4">
-              About Me
-            </span>
-          </div>
-          <div className="bg-gray-400 h-[0.2px] w-full sm:w-72 ml-4"></div>
-        </div>
+        <SectionTitle order={1} text="About Me" />
         <div className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0  md:space-x-8 sm:space-x-2 ">
           <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm ">
             <div className="font-lato ">
