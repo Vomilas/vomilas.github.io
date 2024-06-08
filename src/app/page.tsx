@@ -6,6 +6,7 @@ import {
   AboutMe,
   Experience,
   Portfolio,
+  Contacts,
 } from "../components";
 
 export default function Home() {
@@ -18,6 +19,7 @@ export default function Home() {
       <AboutMe />
       <Experience />
       <Portfolio />
+      <Contacts />
     </main>
   );
 }
