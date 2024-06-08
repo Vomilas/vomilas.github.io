@@ -12,8 +12,12 @@ export const Portfolio = memo((props) => {
     >
       <SectionTitle order={3} text="Some Things I've Built" />
       <div className="flex flex-col xl:space-y-36 space-y-8 md:space-y-28">
-        {PROJECTS.map((project) => (
-          <ProjectDetails key={project.title} {...project} />
+        {PROJECTS.map((project, projectIndex) => (
+          <ProjectDetails
+            key={project.title}
+            position={projectIndex % 2 ? "right" : "left"}
+            {...project}
+          />
         ))}
       </div>
     </div>
