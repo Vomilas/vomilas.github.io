@@ -1,6 +1,7 @@
 import { memo } from "react";
 
 import { Button } from "../ui/button";
+import { TypeWritter } from "../TypeWritter";
 
 export const Welcome = memo(() => {
   return (
@@ -10,7 +11,7 @@ export const Welcome = memo(() => {
         Anushervon Salimov
       </h1>
       <h2 className="text-gray-400 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4">
-        I make ideas & things alive.
+        I <TypeWritter text="make ideas & things alive" delay={150} />
       </h2>
       <h3 className="text-gray-400 font-Header text-sm md:text-lg md:leading-8 sm:text-md mt-10 tracking-wider">
         I&apos;m a <span className="text-secondary">software engineer</span>, i

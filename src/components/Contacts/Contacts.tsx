@@ -21,7 +21,7 @@ export const Contacts = memo((props) => {
       <span className="text-gray-200 text-3xl sm:text-4xl font-bold tracking-wider opacity-85">
         Get In Touch
       </span>
-      <p className="flex font-lato tracking-wider text-gray-400 text-center px-6 sm:px-16 md:px-0 md:w-[600px]">
+      <p className="flex font-lato leading-6 tracking-wider text-gray-400 text-center px-6 sm:px-16 md:px-0 md:w-[600px]">
         Although I&apos;m always open for any new opportunities, my inbox is
         open. Whether you have a question or just want to say hi, I&apos;ll try
         my best to get back to you!
