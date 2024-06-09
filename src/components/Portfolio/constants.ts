@@ -17,4 +17,13 @@ export const PROJECTS = [
     imageSrc: "/assets/uptrader.webp",
     keywords: ["UpTrader", "Meta trading", "CRM"],
   },
+  {
+    title: "Digital Wing",
+    subTitle: "StarTrade Capital",
+    description:
+      "Participated in the development of an aggregator of the world's largest crypto markets",
+    link: "#",
+    imageSrc: "/assets/startrade.webp",
+    keywords: ["Trading", "Market", "Aggregator"],
+  },
 ];
