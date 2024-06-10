@@ -21,9 +21,9 @@ export const PROJECTS = [
     title: "Digital Wing",
     subTitle: "StarTrade Capital",
     description:
-      "Participated in the development of an aggregator of the world's largest crypto markets",
-    link: "#",
-    imageSrc: "/assets/startrade.webp",
+      "Participated in the development of an aggregator of the world's largest crypto markets such as Binance, Coinbase, Bitfinex etc. It helps users find the best prices for tokens. Instead of trading tokens from a single liquidity pool, StarTrade combines different pools and offers the most efficient way to trade tokens.",
+    link: "https://startradecapital.com",
+    imageSrc: "/assets/startrade.png",
     keywords: ["Trading", "Market", "Aggregator"],
   },
 ];
