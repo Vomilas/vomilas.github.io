@@ -16,7 +16,7 @@ export const Experience = memo(() => {
       >
         <Tabs
           defaultValue="kaspersky"
-          className="flex space-x-8 justify-between w-full md:min-h-72"
+          className="flex flex-col gap-8 md:flex-row justify-between w-full md:min-h-72"
           orientation="vertical"
         >
           <TabsList>
