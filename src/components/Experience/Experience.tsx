@@ -8,11 +8,11 @@ import { JOBS } from "./constants";
 
 export const Experience = memo(() => {
   return (
-    <div className="flex flex-col items-center justify-center py-24 space-y-8 bg-primary">
+    <section className="flex flex-col items-center justify-center py-16 md:py-24 space-y-8 bg-primary">
       <SectionTitle order={2} text="Where I've Worked" />
-      <section
+      <div
         className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0
-      justify-center md:justify-center items-center md:items-start w-[640px]"
+      justify-center md:justify-center items-center md:items-start w-full px-4 md:w-[720px]"
       >
         <Tabs
           defaultValue="kaspersky"
@@ -38,8 +38,8 @@ export const Experience = memo(() => {
             </TabsContent>
           ))}
         </Tabs>
-      </section>
-    </div>
+      </div>
+    </section>
   );
 });
 
