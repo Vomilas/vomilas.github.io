@@ -11,7 +11,10 @@ const technologies = [
 
 export const AboutMe = memo(() => {
   return (
-    <div className="snap-start flex flex-col  items-center py-20 bg-primary">
+    <section
+      id="about"
+      className="snap-start flex flex-col  items-center py-20 bg-primary"
+    >
       <div
         className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px]
         md:w-[700px] lg:w-[900px] "
@@ -115,7 +118,7 @@ export const AboutMe = memo(() => {
           </div>
         </div>
       </div>
-    </div>
+    </section>
   );
 });
 

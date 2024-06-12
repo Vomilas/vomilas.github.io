@@ -5,7 +5,10 @@ import { SectionTitle } from "../SectionTitle";
 
 export const Contacts = memo((props) => {
   return (
-    <div className="flex flex-col space-y-4 w-full h-96 pt-24 items-center bg-primary">
+    <section
+      id="contact"
+      className="flex flex-col space-y-4 w-full h-96 pt-24 items-center bg-primary"
+    >
       <SectionTitle order={4} text="Get in touch" />
       <p className="flex font-lato leading-6 tracking-wider text-gray-400 text-center px-6 sm:px-16 md:px-0 md:w-[600px]">
         Although I&apos;m always open for any new opportunities, my inbox is
@@ -17,7 +20,7 @@ export const Contacts = memo((props) => {
           <Button>Say Hello</Button>
         </a>
       </div>
-    </div>
+    </section>
   );
 });
 

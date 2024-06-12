@@ -6,7 +6,8 @@ import { PROJECTS } from "./constants";
 
 export const Portfolio = memo((props) => {
   return (
-    <div
+    <section
+      id="work"
       className=" flex flex-col xl:space-y-28 space-y-12 bg-primary w-full
   2xl:px-72 lg:px-24 md:px-16 sm:px-16 py-16 px-4"
     >
@@ -20,7 +21,7 @@ export const Portfolio = memo((props) => {
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 });
 

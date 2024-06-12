@@ -8,7 +8,10 @@ import { JOBS } from "./constants";
 
 export const Experience = memo(() => {
   return (
-    <section className="flex flex-col items-center justify-center py-16 md:py-24 space-y-8 bg-primary">
+    <section
+      id="experience"
+      className="flex flex-col items-center justify-center py-16 md:py-24 space-y-8 bg-primary"
+    >
       <SectionTitle order={2} text="Where I've Worked" />
       <div
         className="flex flex-col md:flex-row md:space-x-4 space-y-4 md:space-y-0
