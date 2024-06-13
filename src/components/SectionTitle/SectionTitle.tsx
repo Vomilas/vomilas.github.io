@@ -16,23 +16,23 @@ export const SectionTitle = memo(
       <div className={cn("flex flex-row items-center md:px-0", className)}>
         <ArrowIcon
           className={
-            "flex-none h-5 md:h-6 w-5 md:w-5 translate-y-[2px] text-secondary"
+            "h-5 w-5 flex-none translate-y-[2px] text-secondary md:h-6 md:w-5"
           }
         />
-        <div className="flex-none flex-row space-x-2 items-center pr-2">
-          <span className="text-secondary font-sans text-sm sm:text-xl">
+        <div className="flex-none flex-row items-center space-x-2 pr-2">
+          <span className="font-sans text-sm text-secondary sm:text-xl">
             {" "}
             0{order}.
           </span>
-          <span className=" font-bold tracking-wider text-gray-200 text-lg md:text-2xl w-44 md:w-56 opacity-85">
+          <span className="w-44 text-lg font-bold tracking-wider text-gray-200 opacity-85 md:w-56 md:text-2xl">
             {" "}
             {text}
           </span>
         </div>
-        <div className="bg-gray-400 h-[0.2px] w-full md:w-[320px]"></div>
+        <div className="h-[0.2px] w-full bg-gray-400 md:w-[320px]"></div>
       </div>
     );
-  }
+  },
 );
 
 SectionTitle.displayName = "SectionTitle";

@@ -10,13 +10,13 @@ const MEDIAS = [
 
 export const SocialMedia = memo(() => {
   return (
-    <div className="z-10 fixed bottom-0 left-0  hidden lg:flex flex-row px-12 items-center justify-between">
-      <div className="flex flex-col space-y-8 justify-center items-center">
-        <div className="flex flex-col justify-center items-center space-y-5">
+    <div className="fixed bottom-0 left-0 z-10 hidden flex-row items-center justify-between px-12 lg:flex">
+      <div className="flex flex-col items-center justify-center space-y-8">
+        <div className="flex flex-col items-center justify-center space-y-5">
           {MEDIAS.map(({ Icon, url }) => (
             <Icon
               key={url}
-              className="w-6 h-6 text-gray-400 hover:text-secondary fill-current hover:cursor-pointer"
+              className="h-6 w-6 fill-current text-gray-400 hover:cursor-pointer hover:text-secondary"
             />
           ))}
         </div>

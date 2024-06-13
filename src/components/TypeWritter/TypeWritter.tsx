@@ -30,7 +30,7 @@ export const TypeWritter = memo(
     }, [currentIndex, delay, infinite, text]);
 
     return <span>{currentText}</span>;
-  }
+  },
 );
 
 TypeWritter.displayName = "TypeWritter";

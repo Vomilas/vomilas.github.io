@@ -7,7 +7,7 @@ const menuItems = ["About", "Experience", "Work", "Contact"];
 
 export const DesktopMenu = memo(() => {
   return (
-    <div className="font-mono text-xs md:flex hidden flex-row items-center space-x-8 ">
+    <div className="hidden flex-row items-center space-x-8 font-mono text-xs md:flex">
       {menuItems.map((item, index) => (
         <Link
           href={`#${item.toLowerCase()}`}
@@ -15,7 +15,7 @@ export const DesktopMenu = memo(() => {
           className="text-secondary"
         >
           &gt; {`0${index + 1}. `}
-          <span className="text-white hover:cursor-pointer hover:text-secondary duration-300">
+          <span className="text-white duration-300 hover:cursor-pointer hover:text-secondary">
             {item}
           </span>
         </Link>

@@ -13,17 +13,14 @@ export const AboutMe = memo(() => {
   return (
     <section
       id="about"
-      className="snap-start flex flex-col  items-center py-20 bg-primary"
+      className="flex snap-start flex-col items-center bg-primary py-20"
     >
-      <div
-        className="flex flex-col space-y-8 px-4 sm:px-0 w-full sm:w-[500px]
-        md:w-[700px] lg:w-[900px] "
-      >
+      <div className="flex w-full flex-col space-y-8 px-4 sm:w-[500px] sm:px-0 md:w-[700px] lg:w-[900px]">
         <SectionTitle order={1} text="About Me" />
-        <div className="w-full flex flex-col md:flex-row space-y-8 md:space-y-0  md:space-x-8 sm:space-x-2 ">
-          <div className="w-full md:w-7/12 space-y-4 sm:text-base text-sm ">
-            <div className="font-lato ">
-              <span className="text-gray-400 ">
+        <div className="flex w-full flex-col space-y-8 sm:space-x-2 md:flex-row md:space-x-8 md:space-y-0">
+          <div className="w-full space-y-4 text-sm sm:text-base md:w-7/12">
+            <div className="font-lato">
+              <span className="text-gray-400">
                 Hello! My name is Anushervon, and I am a passionate software
                 engineer and problem solver, dedicated to creating impactful
                 codes that thrive on the internet. My journey in computer
@@ -33,8 +30,8 @@ export const AboutMe = memo(() => {
                 start of my programming journey.
               </span>
             </div>
-            <div className="font-lato ">
-              <span className="text-gray-400 ">
+            <div className="font-lato">
+              <span className="text-gray-400">
                 Since pursuing my engineering degree, my career has taken me
                 through diverse industries, allowing me to refine my expertise
                 in desktop and web development. In the realm of{" "}
@@ -43,14 +40,14 @@ export const AboutMe = memo(() => {
               </span>
             </div>
             <div className="font-lato tracking-wide">
-              <span className="text-gray-400  ">
+              <span className="text-gray-400">
                 Here are a few technologies I&apos;ve been working with recently
                 :
               </span>
             </div>
-            <div className="font-lato tracking-wide flex flex-row space-x-16">
-              <div className="flex flex-row space-x-2 items-center">
-                <div className="flex flex-col space-y-4 sm:text-base text-sm">
+            <div className="flex flex-row space-x-16 font-lato tracking-wide">
+              <div className="flex flex-row items-center space-x-2">
+                <div className="flex flex-col space-y-4 text-sm sm:text-base">
                   {technologies[0].map((tech, index) => {
                     return (
                       <div
@@ -58,7 +55,7 @@ export const AboutMe = memo(() => {
                         className="flex flex-row items-center space-x-2"
                       >
                         <ArrowIcon className={"h-3 w-3 text-secondary"} />
-                        <span className="text-gray-400 sm:text-sm text-xs">
+                        <span className="text-xs text-gray-400 sm:text-sm">
                           {tech}
                         </span>
                       </div>
@@ -66,8 +63,8 @@ export const AboutMe = memo(() => {
                   })}
                 </div>
               </div>
-              <div className="flex flex-row space-x-2 items-center">
-                <div className="flex flex-col space-y-4 sm:text-base text-sm">
+              <div className="flex flex-row items-center space-x-2">
+                <div className="flex flex-col space-y-4 text-sm sm:text-base">
                   {technologies[1].map((tech, index) => {
                     return (
                       <div
@@ -75,7 +72,7 @@ export const AboutMe = memo(() => {
                         className="flex flex-row items-center space-x-2"
                       >
                         <ArrowIcon className={"h-3 w-3 text-secondary"} />
-                        <span className="text-gray-400 sm:text-sm text-xs">
+                        <span className="text-xs text-gray-400 sm:text-sm">
                           {tech}
                         </span>
                       </div>
@@ -85,36 +82,32 @@ export const AboutMe = memo(() => {
               </div>
             </div>
           </div>
-          <div className="group relative lg:w-96 lg:h-96 md:w-72 md:h-72 md:block hidden ">
-            <div
-              className="group-hover:translate-x-3 group-hover:translate-y-3
-               duration-300 absolute w-5/6 h-5/6 border-2 border-secondary translate-x-5
-               translate-y-5 rounded"
-            ></div>
+          <div className="group relative hidden md:block md:h-72 md:w-72 lg:h-96 lg:w-96">
+            <div className="absolute h-5/6 w-5/6 translate-x-5 translate-y-5 rounded border-2 border-secondary duration-300 group-hover:translate-x-3 group-hover:translate-y-3"></div>
 
-            <div className="absolute w-5/6 h-5/6  rounded overflow-hidden">
-              <div className="absolute w-full h-full group-hover:opacity-0 bg-secondary opacity-10 duration-300 rounded overflow-hidden"></div>
+            <div className="absolute h-5/6 w-5/6 overflow-hidden rounded">
+              <div className="absolute h-full w-full overflow-hidden rounded bg-secondary opacity-10 duration-300 group-hover:opacity-0"></div>
               <Image
                 src="/assets/portrait.jpg"
-                className="object-contain rounded-lg"
+                className="rounded-lg object-contain"
                 alt="My Image Not Found"
                 width={300}
                 height={300}
               />
             </div>
           </div>
-          <div className=" relative w-full h-48 md:hidden  flex justify-center items-center">
-            <div className="absolute w-48 h-full  rounded  translate-x-5 translate-y-5 border-2 border-secondary"></div>
-            <div className="absolute w-48 h-full rounded overflow-hidden">
+          <div className="relative flex h-48 w-full items-center justify-center md:hidden">
+            <div className="absolute h-full w-48 translate-x-5 translate-y-5 rounded border-2 border-secondary"></div>
+            <div className="absolute h-full w-48 overflow-hidden rounded">
               <Image
                 src="/assets/portrait.jpg"
-                className="object-contain rounded-lg"
+                className="rounded-lg object-contain"
                 alt="My Image Not Found"
                 width={300}
                 height={300}
               />
             </div>
-            <div className="absolute w-48 h-full  bg-secondary opacity-10 md:opacity-60  rounded overflow-hidden"></div>
+            <div className="absolute h-full w-48 overflow-hidden rounded bg-secondary opacity-10 md:opacity-60"></div>
           </div>
         </div>
       </div>
