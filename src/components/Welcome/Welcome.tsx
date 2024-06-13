@@ -5,7 +5,7 @@ import { TypeWritter } from "../TypeWritter";
 
 export const Welcome = memo(() => {
   return (
-    <div className="h-full flex flex-col justify-center px-8 2xl:px-72 xl:px-56 lg:px-32  md:px-28 sm:px-8 py-32 sm:pt-72 sm:pb-48">
+    <section className="h-full flex flex-col justify-center px-8 2xl:px-72 xl:px-56 lg:px-32  md:px-28 sm:px-8 py-32 sm:pt-72 sm:pb-48">
       <span className="text-secondary font-mono">Hi, my name is </span>
       <h1 className="text-gray-300 font-bold text-3xl lg:text-7xl sm:text-5xl md:text-6xl mt-4">
         Anushervon Salimov
@@ -26,7 +26,7 @@ export const Welcome = memo(() => {
       <div className="mt-12">
         <Button>Check out my resume!</Button>
       </div>
-    </div>
+    </section>
   );
 });
 
