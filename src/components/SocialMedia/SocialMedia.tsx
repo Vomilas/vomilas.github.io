@@ -14,8 +14,8 @@ export const SocialMedia = memo(() => {
       <div className="flex flex-col items-center justify-center space-y-8">
         <div className="flex flex-col items-center justify-center space-y-5">
           {MEDIAS.map(({ Icon, url }) => (
-            <a href={url} key={url}>
-              <Icon className="h-6 w-6 fill-current text-gray-400 hover:cursor-pointer hover:text-secondary" />
+            <a href={url} key={url} target="_blank" rel="noopener noreferrer">
+              <Icon className="h-6 w-6 fill-current text-gray-400 transition-all duration-300 ease-in-out hover:text-secondary hover:scale-125 hover:rotate-12 hover:drop-shadow-lg" />
             </a>
           ))}
         </div>
