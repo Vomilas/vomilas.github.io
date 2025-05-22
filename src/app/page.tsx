@@ -1,13 +1,11 @@
-import {
-  Header,
-  Welcome,
-  SocialMedia,
-  EmailAddressBar,
-  AboutMe,
-  Experience,
-  Portfolio,
-  Contacts,
-} from "../components";
+import { Header } from "../components/Header";
+import { Welcome } from "../components/Welcome";
+import { SocialMedia } from "../components/SocialMedia";
+import { EmailAddressBar } from "../components/EmailAddressBar";
+import { AboutMe } from "../components/AboutMe";
+import { Experience } from "../components/Experience";
+import { Portfolio } from "../components/Portfolio";
+import { Contacts } from "../components/Contacts";
 
 export default function Home() {
   return (

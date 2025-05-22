@@ -1,7 +1,11 @@
+"use client";
+
 import { memo } from "react";
 
 import { Button } from "../ui/button";
-import { TypeWritter } from "../TypeWritter";
+import dynamic from "next/dynamic";
+
+const TypeWritter = dynamic(() => import("../TypeWritter").then(mod => mod.TypeWritter), { ssr: false });
 
 export const Welcome = memo(() => {
   return (

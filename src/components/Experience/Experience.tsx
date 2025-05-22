@@ -1,3 +1,5 @@
+"use client";
+
 import { memo } from "react";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
