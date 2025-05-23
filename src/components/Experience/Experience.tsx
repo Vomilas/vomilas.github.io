@@ -21,7 +21,7 @@ export const Experience = memo(() => {
           className="flex w-full flex-col justify-between gap-8 md:min-h-72 md:flex-row"
           orientation="vertical"
         >
-          <TabsList>
+          <TabsList className="flex h-auto flex-row overflow-x-auto md:flex-col">
             {JOBS.map((job) => (
               <TabsTrigger value={job.slug} key={job.slug}>
                 {job.companyName}
@@ -29,7 +29,7 @@ export const Experience = memo(() => {
             ))}
           </TabsList>
           {JOBS.map((job) => (
-            <TabsContent value={job.slug} key={job.slug} className="h-72">
+            <TabsContent value={job.slug} key={job.slug} className="h-auto min-h-[400px] md:h-72 md:min-h-0">
               <JobDetails
                 companyName={job.companyName}
                 position={job.position}
