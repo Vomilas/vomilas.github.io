@@ -3,7 +3,7 @@ export const PROJECTS = [
     title: "Sber",
     subTitle: "School & Student accelerator",
     description:
-      "I had the opportunity to lead the UI development of the accelerator for schoolchildren, college students,postgraduates, researchers at institutes and universities. Participants will be able to develop their business ideas and launch their first commercial project based on the platform.",
+      "Led frontend development of an educational accelerator platform that enables students to transform their business ideas into commercial projects. Implemented personalized learning paths, progress tracking, and interactive tools to support the entire project lifecycle.",
     link: "https://sberstudent.sberclass.ru",
     imageSrc: "/assets/schoolacc.png",
     keywords: ["Accelerator", "Education", "SberClass"],
@@ -12,7 +12,7 @@ export const PROJECTS = [
     title: "UpTrader",
     subTitle: "UpTrader CRM",
     description:
-      "At UpTrader, I played a crucial role in developing CRM system for traders and brokers. In a fairly short time, our team has managed to implement several main features as partnership systems, bonus management, trading tools etc, that are actively used by clients nowadays",
+      "Developed a comprehensive CRM system for traders and brokers, featuring partnership management, bonus systems, and advanced trading tools. Built responsive interfaces and real-time data synchronization to enhance user experience across all devices.",
     link: "https://uptrader.io",
     imageSrc: "/assets/uptrader.webp",
     keywords: ["UpTrader", "Meta trading", "CRM"],
@@ -21,7 +21,7 @@ export const PROJECTS = [
     title: "Digital Wing",
     subTitle: "StarTrade Capital",
     description:
-      "Participated in the development of an aggregator of the world's largest crypto markets such as Binance, Coinbase, Bitfinex etc. It helps users find the best prices for tokens. Instead of trading tokens from a single liquidity pool, StarTrade combines different pools and offers the most efficient way to trade tokens.",
+      "Built a cryptocurrency market aggregator that connects to major exchanges including Binance, Coinbase, and Bitfinex. Implemented smart routing algorithms to find optimal trading prices across multiple liquidity pools, maximizing trading efficiency for users.",
     link: "https://startradecapital.com",
     imageSrc: "/assets/startrade.png",
     keywords: ["Trading", "Market", "Aggregator"],
