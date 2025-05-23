@@ -5,8 +5,8 @@ import { ArrowIcon } from "../icons";
 import { SectionTitle } from "../SectionTitle";
 
 const technologies = [
-  ["Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Ether.js", "Solidity"],
-  ["Node.js", "TypeScript", "Framer Motion", "react-moralis", "web3.js"],
+  ["React","Next.js", "JavaScript (ES6+)", "Tailwind CSS", "Webpack"],
+  ["Node.js", "TypeScript", "Framer Motion", "Three.js", "D3"],
 ];
 
 export const AboutMe = memo(() => {
