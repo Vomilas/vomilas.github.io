@@ -17,7 +17,7 @@ export const ParticlesBackground = () => {
     canvas.height = height;
 
     let particles: any[] = [];
-    const particleCount = 100;
+    const particleCount = width < 768 ? 30 : 100;
     const maxVelocity = 0.5;
     const connectionDistance = 120;
 

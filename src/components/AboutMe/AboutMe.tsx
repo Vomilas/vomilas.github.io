@@ -85,11 +85,11 @@ export const AboutMe = memo(() => {
           <div className="group relative hidden md:block md:h-72 md:w-72 lg:h-96 lg:w-96">
             <div className="absolute h-5/6 w-5/6 translate-x-5 translate-y-5 rounded border-2 border-secondary duration-300 group-hover:translate-x-3 group-hover:translate-y-3"></div>
 
-            <div className="absolute h-5/6 w-5/6 overflow-hidden rounded">
+            <div className="absolute h-5/6 w-5/6 overflow-hidden rounded z-20">
               <div className="absolute h-full w-full overflow-hidden rounded bg-secondary opacity-10 duration-300 group-hover:opacity-0"></div>
               <Image
                 src="/assets/portrait.jpg"
-                className="rounded-lg object-contain"
+                className="rounded-lg object-contain z-10"
                 alt="My Image Not Found"
                 width={300}
                 height={300}
