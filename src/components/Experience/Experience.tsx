@@ -12,7 +12,7 @@ export const Experience = memo(() => {
   return (
     <section
       id="experience"
-      className="flex flex-col items-center justify-center space-y-4 bg-primary py-8 md:space-y-8 md:py-24"
+      className="flex flex-col items-center justify-center space-y-4 py-8 md:space-y-8 md:py-24"
     >
       <SectionTitle order={2} text="Where I've Worked" />
       <div className="flex w-full flex-col items-center justify-center space-y-4 px-4 md:w-[840px] md:flex-row md:items-start md:justify-center md:space-x-4 md:space-y-0">

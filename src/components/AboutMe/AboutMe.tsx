@@ -13,7 +13,7 @@ export const AboutMe = memo(() => {
   return (
     <section
       id="about"
-      className="flex snap-start flex-col items-center bg-primary py-20"
+      className="flex snap-start flex-col items-center py-20"
     >
       <div className="flex w-full flex-col space-y-8 px-4 sm:w-[500px] sm:px-0 md:w-[700px] lg:w-[900px]">
         <SectionTitle order={1} text="About Me" />

@@ -7,7 +7,7 @@ export const Contacts = memo((props) => {
   return (
     <section
       id="contact"
-      className="flex h-96 w-full flex-col items-center space-y-4 bg-primary pt-24"
+      className="flex h-96 w-full flex-col items-center space-y-4 pt-24"
     >
       <SectionTitle order={4} text="Get in touch" />
       <p className="flex px-6 text-center font-lato leading-6 tracking-wider text-gray-400 sm:px-16 md:w-[600px] md:px-0">

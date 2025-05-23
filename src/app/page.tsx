@@ -18,7 +18,7 @@ export default function Home() {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsLoading(false);
-    }, 3000);
+    }, 1700);
 
     return () => clearTimeout(timer);
   }, []);
@@ -30,16 +30,14 @@ export default function Home() {
   return (
     <main className="relative min-h-screen w-full snap-mandatory bg-primary">
       <ParticlesBackground />
-      <div className="relative z-10">
-        <Header />
-        <Welcome />
-        <SocialMedia />
-        <EmailAddressBar />
-        <AboutMe />
-        <Experience />
-        <Portfolio />
-        <Contacts />
-      </div>
+      <Header />
+      <Welcome />
+      <SocialMedia />
+      <EmailAddressBar />
+      <AboutMe />
+      <Experience />
+      <Portfolio />
+      <Contacts />
     </main>
   );
 }
