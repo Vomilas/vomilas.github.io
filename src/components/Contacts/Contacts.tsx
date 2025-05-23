@@ -17,7 +17,7 @@ export const Contacts = memo((props) => {
       </p>
       <div className="pt-4">
         <a href="mailto:afsalimov@gmail.com" target="_blank" rel="noreferrer">
-          <Button>Say Hello</Button>
+          <Button className="hover:scale-105 transition-transform duration-300">Say Hello</Button>
         </a>
       </div>
     </section>

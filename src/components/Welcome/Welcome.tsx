@@ -28,7 +28,7 @@ export const Welcome = memo(() => {
         <span className="text-secondary">web-applications</span>.
       </h3>
       <div className="mt-12">
-        <Button>Check out my resume!</Button>
+        <Button className="hover:scale-105 transition-transform duration-300">Check out my resume!</Button>
       </div>
     </section>
   );
