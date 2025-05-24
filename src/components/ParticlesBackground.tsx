@@ -1,121 +1,127 @@
 "use client";
 
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useCallback } from "react";
+
+interface Particle {
+  x: number;
+  y: number;
+  vx: number;
+  vy: number;
+}
 
 export const ParticlesBackground = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const animationFrameRef = useRef<number | undefined>(undefined);
+  const particlesRef = useRef<Particle[]>([]);
+
+  const randomBetween = useCallback((a: number, b: number) => {
+    return a + Math.random() * (b - a);
+  }, []);
+
+  const createParticles = useCallback((width: number, height: number) => {
+    const particleCount = 50; // Fixed number of particles
+    const maxVelocity = 0.5;
+    const particles: Particle[] = [];
+
+    for (let i = 0; i < particleCount; i++) {
+      particles.push({
+        x: randomBetween(0, width),
+        y: randomBetween(0, height),
+        vx: randomBetween(-maxVelocity, maxVelocity),
+        vy: randomBetween(-maxVelocity, maxVelocity),
+      });
+    }
+    particlesRef.current = particles;
+  }, [randomBetween]);
+
+  const draw = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number) => {
+    ctx.clearRect(0, 0, width, height);
+
+    // Draw particles
+    particlesRef.current.forEach(particle => {
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2, false);
+      ctx.fillStyle = "rgba(255, 215, 0, 0.8)";
+      ctx.fill();
+    });
+
+    // Draw connections
+    const connectionDistance = 200;
+    for (let i = 0; i < particlesRef.current.length; i++) {
+      for (let j = i + 1; j < particlesRef.current.length; j++) {
+        const p1 = particlesRef.current[i];
+        const p2 = particlesRef.current[j];
+        const dist = Math.sqrt(
+          Math.pow(p1.x - p2.x, 2) + Math.pow(p1.y - p2.y, 2)
+        );
+
+        if (dist < connectionDistance) {
+          ctx.beginPath();
+          ctx.moveTo(p1.x, p1.y);
+          ctx.lineTo(p2.x, p2.y);
+          ctx.strokeStyle = `rgba(255, 215, 0, ${0.5 * (1 - dist / connectionDistance)})`;
+          ctx.lineWidth = 1.5;
+          ctx.stroke();
+        }
+      }
+    }
+  }, []);
+
+  const animate = useCallback(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    if (!ctx) return;
+
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
+    // Update canvas size if needed
+    if (canvas.width !== width || canvas.height !== height) {
+      canvas.width = width;
+      canvas.height = height;
+      createParticles(width, height);
+    }
+
+    // Update particle positions
+    particlesRef.current.forEach(particle => {
+      particle.x += particle.vx;
+      particle.y += particle.vy;
+
+      // Bounce off edges
+      if (particle.x < 0 || particle.x > width) particle.vx *= -1;
+      if (particle.y < 0 || particle.y > height) particle.vy *= -1;
+    });
+
+    draw(ctx, width, height);
+    animationFrameRef.current = requestAnimationFrame(animate);
+  }, [createParticles, draw]);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    if (!ctx) return;
 
-    let width = window.innerWidth;
-    let height = window.innerHeight;
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+
     canvas.width = width;
     canvas.height = height;
-
-    let particles: any[] = [];
-    const particleCount = width < 768 ? 30 : 100;
-    const maxVelocity = 0.5;
-    const connectionDistance = 120;
-
-    function randomBetween(a: number, b: number) {
-      return a + Math.random() * (b - a);
-    }
-
-    function createParticles() {
-      particles = [];
-      for (let i = 0; i < particleCount; i++) {
-        particles.push({
-          x: randomBetween(0, width),
-          y: randomBetween(0, height),
-          vx: randomBetween(-maxVelocity, maxVelocity),
-          vy: randomBetween(-maxVelocity, maxVelocity),
-        });
-      }
-    }
-
-    function draw() {
-      if (!ctx) return;
-      ctx.clearRect(0, 0, width, height);
-      for (let i = 0; i < particleCount; i++) {
-        let p = particles[i];
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, 4, 0, Math.PI * 2, false);
-        ctx.fillStyle = "rgba(255, 215, 0, 0.25)";
-        ctx.fill();
-      }
-      for (let i = 0; i < particleCount; i++) {
-        for (let j = i + 1; j < particleCount; j++) {
-          let p1 = particles[i];
-          let p2 = particles[j];
-          let dist = Math.sqrt(
-            (p1.x - p2.x) * (p1.x - p2.x) + (p1.y - p2.y) * (p1.y - p2.y)
-          );
-          if (dist < connectionDistance) {
-            ctx.beginPath();
-            ctx.moveTo(p1.x, p1.y);
-            ctx.lineTo(p2.x, p2.y);
-            ctx.strokeStyle = "rgba(255, 215, 0, 0.25)";
-            ctx.lineWidth = 1;
-            ctx.stroke();
-          }
-        }
-      }
-    }
-
-    function update() {
-      for (let i = 0; i < particleCount; i++) {
-        let p = particles[i];
-        p.x += p.vx;
-        p.y += p.vy;
-        if (p.x < 0 || p.x > width) p.vx *= -1;
-        if (p.y < 0 || p.y > height) p.vy *= -1;
-      }
-    }
-
-    function animate() {
-      update();
-      draw();
-      animationId = requestAnimationFrame(animate);
-    }
-
-    function resize() {
-      const canvas = canvasRef.current;
-      if (!canvas) return;
-      width = window.innerWidth;
-      height = window.innerHeight;
-      canvas.width = width;
-      canvas.height = height;
-      createParticles();
-    }
-
-    let animationId = requestAnimationFrame(animate);
-    window.addEventListener("resize", resize);
-    createParticles();
-    draw();
+    createParticles(width, height);
     animate();
 
     return () => {
-      window.removeEventListener("resize", resize);
-      cancelAnimationFrame(animationId);
+      if (animationFrameRef.current) {
+        cancelAnimationFrame(animationFrameRef.current);
+      }
     };
-  }, []);
+  }, [animate, createParticles]);
 
   return (
     <canvas
       ref={canvasRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        width: "100vw",
-        height: "100vh",
-        zIndex: 1,
-        pointerEvents: "none",
-      }}
+      className="fixed inset-0 -z-1 h-full w-full pointer-events-none"
+      aria-hidden="true"
     />
   );
 };

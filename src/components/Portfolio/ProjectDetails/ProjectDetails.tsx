@@ -1,28 +1,21 @@
 import { memo } from "react";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
+import { Project } from "../constants";
 
-type ProjectDetailsProps = {
-  title: string;
-  subTitle?: string;
-  description: string;
-  link: string;
-  imageSrc: string;
-  keywords: string[];
+type ProjectDetailsProps = Project & {
   position?: "left" | "right";
 };
 
-export const ProjectDetails = memo((props: ProjectDetailsProps) => {
-  const {
-    title,
-    subTitle,
-    description,
-    link,
-    imageSrc,
-    keywords,
-    position = "left",
-  } = props;
-
+export const ProjectDetails = memo(({
+  title,
+  subTitle,
+  description,
+  link,
+  imageSrc,
+  keywords,
+  position = "left",
+}: ProjectDetailsProps) => {
   const isImageOnTheLeft = position === "left";
 
   return (
@@ -33,16 +26,22 @@ export const ProjectDetails = memo((props: ProjectDetailsProps) => {
             "col-start-6": !isImageOnTheLeft,
           })}
         >
-          <a href={link} target="_blank" rel="noreferrer">
+          <a
+            href={link}
+            target="_blank"
+            rel="noreferrer"
+            className="block h-full w-full"
+          >
             <div className="absolute h-full w-full rounded bg-primary opacity-30 transition-opacity duration-300 hover:cursor-pointer hover:opacity-0"></div>
+            <Image
+              src={imageSrc}
+              className="h-full w-full rounded object-cover"
+              alt={`${title} Screenshot`}
+              width={600}
+              height={400}
+              priority
+            />
           </a>
-          <Image
-            src={imageSrc}
-            className="h-full w-full rounded"
-            alt={`${title} Screenshot`}
-            width={600}
-            height={400}
-          />
         </div>
       </div>
       <div className="h-full w-full content-center py-4 md:absolute md:grid md:grid-cols-12">
@@ -52,10 +51,11 @@ export const ProjectDetails = memo((props: ProjectDetailsProps) => {
             <div className="absolute z-10 h-full w-full bg-primary opacity-80"></div>
             <Image
               src={imageSrc}
-              className="h-full w-full"
+              className="h-full w-full object-cover"
               alt={`${title} Screenshot`}
               width={600}
               height={400}
+              priority
             />
           </div>
         </div>
@@ -72,8 +72,13 @@ export const ProjectDetails = memo((props: ProjectDetailsProps) => {
               "md:items-end": isImageOnTheLeft,
             })}
           >
-            <span className="text-base text-secondary">{title} </span>
-            <a href={link} target="_blank" rel="noopener noreferrer">
+            <span className="text-base text-secondary">{title}</span>
+            <a
+              href={link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:opacity-80 transition-opacity"
+            >
               <span className="text-xl font-bold text-secondary hover:cursor-pointer md:text-gray-200">
                 {subTitle}
               </span>
@@ -97,14 +102,11 @@ export const ProjectDetails = memo((props: ProjectDetailsProps) => {
             )}
           >
             {keywords.map((word) => (
-              <span className="z-10 pr-4" key={word}>
+              <li className="z-10 pr-4" key={word}>
                 {word}
-              </span>
+              </li>
             ))}
           </ul>
-          <div className="fle-row z-10 flex space-x-5">
-            <a href={link} target={"_blank"} rel="noreferrer"></a>
-          </div>
         </div>
       </div>
     </div>

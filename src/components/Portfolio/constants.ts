@@ -1,4 +1,13 @@
-export const PROJECTS = [
+export interface Project {
+  title: string;
+  subTitle: string;
+  description: string;
+  link: string;
+  imageSrc: string;
+  keywords: string[];
+}
+
+export const PROJECTS: Project[] = [
   {
     title: "Kaspersky",
     subTitle: "Threat Intelligence Portal",
