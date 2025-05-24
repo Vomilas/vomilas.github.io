@@ -17,15 +17,14 @@ export const Welcome = memo(() => {
       <h2 className="mt-4 text-3xl font-bold text-gray-400 sm:text-5xl md:text-6xl lg:text-7xl">
         I <TypeWritter text="make ideas & things alive" delay={150} />
       </h2>
-      <h3 className="font-Header sm:text-md mt-10 text-sm tracking-wider text-gray-400 md:text-lg md:leading-8">
-        I&apos;m a <span className="text-secondary">software engineer</span>, i
-        possess strong problem-solving skills and specialize in crafting
-        exceptional <br className="hidden 2xl:block" />
-        digital experiences. My current area of focus is in the{" "}
-        <span className="text-secondary">web</span>, where I actively engage in
-        developing <br className="hidden 2xl:block" />
-        and designing immersive{" "}
-        <span className="text-secondary">web-applications</span>.
+      <h3 className="font-Header sm:text-md mt-10 text-sm tracking-wider text-gray-400 md:text-lg md:leading-8 max-w-3xl">
+        I&apos;m a <span className="text-secondary">software engineer</span> passionate about building{" "}
+        <span className="text-secondary">web applications</span> that{" "}
+        <br className="hidden 2xl:block" />
+        solve real-world challenges. With a focus on{" "}
+        <span className="text-secondary">user experience</span>, I create{" "}
+        <br className="hidden 2xl:block" />
+        digital solutions that are both elegant and impactful.
       </h3>
       <div className="mt-12">
         <Button className="hover:scale-105 transition-transform duration-300">Check out my resume!</Button>

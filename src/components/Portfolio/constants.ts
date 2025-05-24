@@ -1,5 +1,14 @@
 export const PROJECTS = [
   {
+    title: "Kaspersky",
+    subTitle: "Threat Intelligence Portal",
+    description:
+      "Engineered key features for the Threat Intelligence Portal, crafting the Threat Landscape visualization and implementing MITRE ATT&CK Matrix integration. Built an advanced research graph in the CyberTrace project that maps security indicators to detections, enabling more efficient threat analysis and correlation.",
+    link: "https://opentip.kaspersky.com/",
+    imageSrc: "/assets/tip.png",
+    keywords: ["Kaspersky", "Threat Intelligence", "Security"],
+  },
+  {
     title: "Sber",
     subTitle: "School & Student accelerator",
     description:
