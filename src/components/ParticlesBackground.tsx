@@ -42,7 +42,7 @@ export const ParticlesBackground = () => {
     particlesRef.current.forEach(particle => {
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2, false);
-      ctx.fillStyle = "rgba(255, 215, 0, 0.6)";
+      ctx.fillStyle = "rgba(255, 215, 0, 0.3)";
       ctx.fill();
     });
 

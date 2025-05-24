@@ -76,7 +76,14 @@ export const MobileMenu = memo(() => {
                       ? "bg-secondary/10 text-secondary"
                       : "text-gray-400 hover:bg-secondary/5 hover:text-secondary"
                   }`}
-                  onClick={() => setIsOpen(false)}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    const element = document.getElementById(item.href.substring(1));
+                    if (element) {
+                      element.scrollIntoView({ behavior: 'smooth' });
+                    }
+                    setIsOpen(false);
+                  }}
                   aria-current={isActive ? "page" : undefined}
                 >
                   {item.label}
