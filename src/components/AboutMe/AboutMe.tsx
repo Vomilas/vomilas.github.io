@@ -23,19 +23,19 @@ export const AboutMe = memo(() => {
           <div className="w-full space-y-4 text-sm sm:text-base md:w-7/12">
             <div className="font-lato">
               <span className="text-gray-400">
-                Hi there! I'm Anushervon, a software engineer who transforms complex problems into elegant solutions. My journey in tech began in 2010 when I started writing scripts for Football Manager, sparking a passion for programming that has evolved into a career of creating impactful web applications.
+                Hi there! I&apos;m Anushervon, a software engineer who transforms complex problems into elegant solutions. My journey in tech began in 2010 when I started writing scripts for Football Manager, sparking a passion for programming that has evolved into a career of creating impactful web applications.
               </span>
             </div>
             <div className="font-lato">
               <span className="text-gray-400">
-                With experience across diverse industries, I've honed my expertise in building scalable web applications and user-centric interfaces. I specialize in the{" "}
+                With experience across diverse industries, I&apos;ve honed my expertise in building scalable web applications and user-centric interfaces. I specialize in the{" "}
                 <span className="text-secondary">web</span>{" "}
                 domain, where I combine technical excellence with creative problem-solving to deliver exceptional digital experiences.
               </span>
             </div>
             <div className="font-lato tracking-wide">
               <span className="text-gray-400">
-                Here are a few technologies I've been working with recently:
+                Here are a few technologies I&apos;ve been working with recently:
               </span>
             </div>
             <div className="flex flex-row space-x-16 font-lato tracking-wide">

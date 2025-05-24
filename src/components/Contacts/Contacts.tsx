@@ -13,7 +13,7 @@ export const Contacts = memo(() => {
       <SectionParticles particleCount={25} />
       <SectionTitle order={4} text="Get In Touch" />
       <p className="flex px-6 text-center font-lato leading-6 tracking-wider text-gray-400 sm:px-16 md:w-[600px] md:px-0">
-        Let's turn your ideas into reality! Whether it's a new project, collaboration, or just a friendly chat about tech, I'm here to connect and create something amazing together.
+        Let&apos;s turn your ideas into reality! Whether it&apos;s a new project, collaboration, or just a friendly chat about tech, I&apos;m here to connect and create something amazing together.
       </p>
       <div className="pt-4">
         <a href="mailto:afsalimov@gmail.com" target="_blank" rel="noreferrer">
