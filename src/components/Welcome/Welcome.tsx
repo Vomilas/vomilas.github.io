@@ -4,12 +4,14 @@ import { memo } from "react";
 
 import { Button } from "../ui/button";
 import dynamic from "next/dynamic";
+import { SectionParticles } from "../ParticlesBackground";
 
 const TypeWritter = dynamic(() => import("../TypeWritter").then(mod => mod.TypeWritter), { ssr: false });
 
 export const Welcome = memo(() => {
   return (
-    <section className="flex h-full flex-col justify-center px-8 py-32 sm:px-8 sm:pb-48 sm:pt-72 md:px-28 lg:px-32 xl:px-56 2xl:px-72">
+    <section className="relative flex min-h-screen flex-col justify-center px-8 pt-0 sm:px-8 md:px-28 md:pt-32 lg:px-32 xl:px-56 2xl:px-72">
+      <SectionParticles particleCount={80} />
       <span className="font-mono text-secondary">Hi, my name is </span>
       <h1 className="mt-4 text-3xl font-bold text-gray-300 sm:text-5xl md:text-6xl lg:text-7xl">
         Anushervon Salimov

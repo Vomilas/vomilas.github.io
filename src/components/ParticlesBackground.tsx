@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useRef, useCallback } from "react";
+import { cn } from "@/lib/utils";
 
 interface Particle {
   x: number;
@@ -9,7 +10,12 @@ interface Particle {
   vy: number;
 }
 
-export const ParticlesBackground = () => {
+interface ParticlesProps {
+  className?: string;
+  particleCount?: number;
+}
+
+export const ParticlesBackground = ({ className, particleCount = 50 }: ParticlesProps) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
   const animationFrameRef = useRef<number | undefined>(undefined);
   const particlesRef = useRef<Particle[]>([]);
@@ -20,11 +26,11 @@ export const ParticlesBackground = () => {
 
   const createParticles = useCallback((width: number, height: number) => {
     const isMobile = width < 768;
-    const particleCount = isMobile ? 20 : 80; // Increased to 80 for desktop
+    const count = isMobile ? Math.floor(particleCount / 2) : particleCount;
     const maxVelocity = 0.5;
     const particles: Particle[] = [];
 
-    for (let i = 0; i < particleCount; i++) {
+    for (let i = 0; i < count; i++) {
       particles.push({
         x: randomBetween(0, width),
         y: randomBetween(0, height),
@@ -33,7 +39,7 @@ export const ParticlesBackground = () => {
       });
     }
     particlesRef.current = particles;
-  }, [randomBetween]);
+  }, [randomBetween, particleCount]);
 
   const draw = useCallback((ctx: CanvasRenderingContext2D, width: number, height: number) => {
     ctx.clearRect(0, 0, width, height);
@@ -75,8 +81,8 @@ export const ParticlesBackground = () => {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = canvas.offsetWidth;
+    const height = canvas.offsetHeight;
 
     // Update canvas size if needed
     if (canvas.width !== width || canvas.height !== height) {
@@ -103,8 +109,8 @@ export const ParticlesBackground = () => {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    const width = window.innerWidth;
-    const height = window.innerHeight;
+    const width = canvas.offsetWidth;
+    const height = canvas.offsetHeight;
 
     canvas.width = width;
     canvas.height = height;
@@ -121,8 +127,16 @@ export const ParticlesBackground = () => {
   return (
     <canvas
       ref={canvasRef}
-      className="fixed inset-0 -z-1 h-full w-full pointer-events-none"
+      className={className}
       aria-hidden="true"
     />
+  );
+};
+
+export const SectionParticles = ({ className, particleCount = 50 }: { className?: string; particleCount?: number }) => {
+  return (
+    <div className={cn("absolute inset-0 h-full w-full pointer-events-none", className)}>
+      <ParticlesBackground particleCount={particleCount} className="h-full w-full" />
+    </div>
   );
 };

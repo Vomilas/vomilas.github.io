@@ -8,7 +8,6 @@ import { AboutMe } from "@/components/AboutMe/AboutMe";
 import { Experience } from "@/components/Experience/Experience";
 import { Portfolio } from "@/components/Portfolio/Portfolio";
 import { Contacts } from "@/components/Contacts/Contacts";
-import { ParticlesBackground } from "@/components/ParticlesBackground";
 import { Loader } from "@/components/Loader/Loader";
 import { useEffect, useState } from "react";
 
@@ -28,16 +27,17 @@ export default function Home() {
   }
 
   return (
-    <main className="relative min-h-screen w-full snap-mandatory bg-primary">
-      <ParticlesBackground />
+    <main className="relative w-full bg-primary">
       <Header />
-      <Welcome />
+      <div className="flex flex-col">
+        <Welcome />
+        <AboutMe />
+        <Experience />
+        <Portfolio />
+        <Contacts />
+      </div>
       <SocialMedia />
       <EmailAddressBar />
-      <AboutMe />
-      <Experience />
-      <Portfolio />
-      <Contacts />
     </main>
   );
 }

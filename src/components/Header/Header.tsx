@@ -9,9 +9,9 @@ const shouldShowElement = true;
 export const Header = memo(() => {
   return (
     <div
-      className={`fixed w-full ${
+      className={`fixed top-0 left-0 w-full ${
         shouldShowElement ? `bg-opacity-30 shadow-xl` : `bg-opacity-0`
-      } duration-4000 z-20 flex translate-y-0 justify-between items-center bg-primary px-6 py-2 transition sm:px-12 sm:py-4`}
+      } duration-4000 z-50 flex translate-y-0 justify-between items-center bg-primary px-6 py-2 transition sm:px-12 sm:py-4`}
     >
       <Logo />
       <div className="flex items-center">

@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { ArrowIcon } from "../icons";
 import { SectionTitle } from "../SectionTitle";
+import { SectionParticles } from "../ParticlesBackground";
 
 const technologies = [
   ["React", "Next.js", "TypeScript", "GraphQL", "Module Federation"],
@@ -13,9 +14,10 @@ export const AboutMe = memo(() => {
   return (
     <section
       id="about"
-      className="flex snap-start flex-col items-center py-20"
+      className="relative flex snap-start flex-col items-center py-16"
     >
-      <div className="flex w-full flex-col space-y-8 px-4 sm:w-[500px] sm:px-0 md:w-[700px] lg:w-[900px]">
+      <SectionParticles particleCount={40} />
+      <div className="flex w-full flex-col space-y-8 px-4 sm:w-[500px] sm:px-0 md:w-[700px] lg:w-[900px] relative z-[2]">
         <SectionTitle order={1} text="About Me" />
         <div className="flex w-full flex-col space-y-8 sm:space-x-2 md:flex-row md:space-x-8 md:space-y-0">
           <div className="w-full space-y-4 text-sm sm:text-base md:w-7/12">

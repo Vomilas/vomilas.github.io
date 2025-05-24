@@ -2,14 +2,16 @@ import { memo } from "react";
 
 import { Button } from "../ui/button";
 import { SectionTitle } from "../SectionTitle";
+import { SectionParticles } from "../ParticlesBackground";
 
-export const Contacts = memo((props) => {
+export const Contacts = memo(() => {
   return (
     <section
-      id="contact"
-      className="flex h-96 w-full flex-col items-center space-y-4 pt-24"
+      id="contacts"
+      className="relative flex w-full flex-col items-center justify-center space-y-4 px-4 py-16 sm:px-16 md:space-y-8 md:px-16 lg:px-24 xl:space-y-12 2xl:px-72"
     >
-      <SectionTitle order={4} text="Get in touch" />
+      <SectionParticles particleCount={25} />
+      <SectionTitle order={4} text="Get In Touch" />
       <p className="flex px-6 text-center font-lato leading-6 tracking-wider text-gray-400 sm:px-16 md:w-[600px] md:px-0">
         Let's turn your ideas into reality! Whether it's a new project, collaboration, or just a friendly chat about tech, I'm here to connect and create something amazing together.
       </p>
