@@ -19,7 +19,8 @@ export const ParticlesBackground = () => {
   }, []);
 
   const createParticles = useCallback((width: number, height: number) => {
-    const particleCount = 50; // Fixed number of particles
+    const isMobile = width < 768;
+    const particleCount = isMobile ? 20 : 80; // Increased to 80 for desktop
     const maxVelocity = 0.5;
     const particles: Particle[] = [];
 
@@ -41,7 +42,7 @@ export const ParticlesBackground = () => {
     particlesRef.current.forEach(particle => {
       ctx.beginPath();
       ctx.arc(particle.x, particle.y, 3, 0, Math.PI * 2, false);
-      ctx.fillStyle = "rgba(255, 215, 0, 0.8)";
+      ctx.fillStyle = "rgba(255, 215, 0, 0.6)";
       ctx.fill();
     });
 
