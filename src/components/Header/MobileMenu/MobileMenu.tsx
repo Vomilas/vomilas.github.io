@@ -1,35 +1,17 @@
-import { memo, useState, useEffect, useCallback } from "react";
+import { memo, useState } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu } from "lucide-react";
 import { menuItems } from "@/config/menu";
+import { useScrollPosition } from "@/lib/hooks";
+import { RESUME_PATH } from "@/config/constants";
 
 export const MobileMenu = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("");
-
-  const handleScroll = useCallback(() => {
-    const sections = menuItems.map(item => item.href.substring(1));
-    const currentSection = sections.find(section => {
-      const element = document.getElementById(section);
-      if (element) {
-        const rect = element.getBoundingClientRect();
-        return rect.top <= 100 && rect.bottom >= 100;
-      }
-      return false;
-    });
-    setActiveSection(currentSection || "");
-  }, []);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll(); // Check initial position
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [handleScroll]);
+  const activeSection = useScrollPosition();
 
   const handleResumeClick = () => {
-    window.open('/assets/resume.pdf', '_blank', 'noopener,noreferrer');
+    window.open(RESUME_PATH, '_blank', 'noopener,noreferrer');
   };
 
   return (
