@@ -7,7 +7,7 @@ import { SectionParticles } from "../ParticlesBackground";
 export const Contacts = memo(() => {
   return (
     <section
-      id="contacts"
+      id="contact"
       className="relative flex w-full flex-col items-center justify-center space-y-4 px-4 py-16 sm:px-16 md:space-y-8 md:px-16 lg:px-24 xl:space-y-12 2xl:px-72"
     >
       <SectionParticles particleCount={25} />
