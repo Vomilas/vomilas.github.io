@@ -1,20 +1,27 @@
 "use client";
 
-import { memo } from "react";
+import { memo, useCallback } from "react";
 
 import { Button } from "../ui/button";
 import dynamic from "next/dynamic";
 import { SectionParticles } from "../ParticlesBackground";
 
-const TypeWritter = dynamic(() => import("../TypeWritter").then(mod => mod.TypeWritter), { ssr: false });
+const TypeWritter = dynamic(() => import("../TypeWritter").then(mod => mod.TypeWritter), {
+  ssr: false,
+  loading: () => <span>make ideas & things alive</span>
+});
 
 export const Welcome = memo(() => {
-  const handleResumeClick = () => {
+  const handleResumeClick = useCallback(() => {
     window.open('/assets/resume.pdf', '_blank', 'noopener,noreferrer');
-  };
+  }, []);
 
   return (
-    <section className="relative flex min-h-screen flex-col justify-center px-8 pt-0 sm:px-8 md:px-28 md:pt-32 lg:px-32 xl:px-56 2xl:px-72">
+    <section
+      id="welcome"
+      className="relative flex min-h-screen flex-col justify-center px-8 pt-0 sm:px-8 md:px-28 md:pt-32 lg:px-32 xl:px-56 2xl:px-72"
+      aria-label="Welcome section"
+    >
       <SectionParticles particleCount={80} />
       <span className="font-mono text-secondary">Hi, my name is </span>
       <h1 className="mt-4 text-3xl font-bold text-gray-300 sm:text-5xl md:text-6xl lg:text-7xl">
@@ -36,6 +43,7 @@ export const Welcome = memo(() => {
         <Button
           onClick={handleResumeClick}
           className="hover:scale-105 transition-transform duration-300"
+          aria-label="Open resume in new tab"
         >
           Check out my resume!
         </Button>

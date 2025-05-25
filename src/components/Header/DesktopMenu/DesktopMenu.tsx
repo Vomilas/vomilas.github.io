@@ -1,9 +1,7 @@
 import { memo } from "react";
 import Link from "next/link";
-
 import { Button } from "@/components/ui/button";
-
-const menuItems = ["About", "Experience", "Work", "Contact"];
+import { menuItems } from "@/config/menu";
 
 export const DesktopMenu = memo(() => {
   const handleClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
@@ -19,27 +17,29 @@ export const DesktopMenu = memo(() => {
   };
 
   return (
-    <div className="hidden flex-row items-center space-x-8 font-mono text-xs md:flex">
+    <nav className="hidden flex-row items-center space-x-8 font-mono text-xs md:flex" aria-label="Main navigation">
       {menuItems.map((item, index) => (
         <Link
-          href={`#${item.toLowerCase()}`}
-          key={item}
+          href={item.href}
+          key={item.id}
           className="text-secondary"
-          onClick={(e) => handleClick(e, `#${item.toLowerCase()}`)}
+          onClick={(e) => handleClick(e, item.href)}
+          aria-label={`Navigate to ${item.label} section`}
         >
           &gt; {`0${index + 1}. `}
           <span className="text-white duration-300 hover:cursor-pointer hover:text-secondary">
-            {item}
+            {item.label}
           </span>
         </Link>
       ))}
       <Button
         onClick={handleResumeClick}
         size="sm"
+        aria-label="Open resume in new tab"
       >
         Resume
       </Button>
-    </div>
+    </nav>
   );
 });
 

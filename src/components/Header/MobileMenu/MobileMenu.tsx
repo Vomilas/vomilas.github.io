@@ -2,13 +2,7 @@ import { memo, useState, useEffect, useCallback } from "react";
 import { Sheet, SheetContent, SheetTrigger, SheetTitle } from "@/components/ui/sheet";
 import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
-
-const menuItems = [
-  { href: "#about", label: "About" },
-  { href: "#experience", label: "Experience" },
-  { href: "#work", label: "Work" },
-  { href: "#contact", label: "Contact" },
-] as const;
+import { menuItems } from "@/config/menu";
 
 export const MobileMenu = memo(() => {
   const [isOpen, setIsOpen] = useState(false);
@@ -34,29 +28,15 @@ export const MobileMenu = memo(() => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [handleScroll]);
 
+  const handleResumeClick = () => {
+    window.open('/assets/resume.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <Sheet open={isOpen} onOpenChange={setIsOpen}>
       <SheetTrigger asChild>
-        <Button
-          variant="ghost"
-          size="icon"
-          className="md:hidden bg-transparent hover:bg-transparent h-10 w-10 flex items-center justify-center"
-          aria-label={isOpen ? "Close menu" : "Open menu"}
-        >
-          <div className="relative w-6 h-6">
-            <Menu
-              className={`absolute inset-0 w-6 h-6 text-gray-400 transition-all duration-300 ${
-                isOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'
-              }`}
-              aria-hidden={isOpen}
-            />
-            <X
-              className={`absolute inset-0 w-6 h-6 text-secondary transition-all duration-300 ${
-                isOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'
-              }`}
-              aria-hidden={!isOpen}
-            />
-          </div>
+        <Button variant="ghost" size="icon" className="md:hidden" aria-label="Open menu">
+          <Menu className="h-6 w-6" />
         </Button>
       </SheetTrigger>
       <SheetContent side="right" className="w-[300px]">
@@ -69,7 +49,7 @@ export const MobileMenu = memo(() => {
               const isActive = activeSection === item.href.substring(1);
               return (
                 <a
-                  key={item.href}
+                  key={item.id}
                   href={item.href}
                   className={`group relative text-lg font-medium px-4 py-2 rounded-md transition-all duration-300 ${
                     isActive
@@ -90,6 +70,14 @@ export const MobileMenu = memo(() => {
                 </a>
               );
             })}
+            <Button
+              onClick={handleResumeClick}
+              variant="outline"
+              className="mt-4 w-full"
+              aria-label="Open resume in new tab"
+            >
+              Resume
+            </Button>
           </nav>
         </div>
       </SheetContent>
