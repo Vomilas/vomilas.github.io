@@ -14,6 +14,10 @@ export const DesktopMenu = memo(() => {
     }
   };
 
+  const handleResumeClick = () => {
+    window.open('/assets/resume.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <div className="hidden flex-row items-center space-x-8 font-mono text-xs md:flex">
       {menuItems.map((item, index) => (
@@ -29,7 +33,12 @@ export const DesktopMenu = memo(() => {
           </span>
         </Link>
       ))}
-      <Button size="sm"> Resume</Button>
+      <Button
+        onClick={handleResumeClick}
+        size="sm"
+      >
+        Resume
+      </Button>
     </div>
   );
 });

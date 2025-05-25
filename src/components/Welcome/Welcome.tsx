@@ -9,6 +9,10 @@ import { SectionParticles } from "../ParticlesBackground";
 const TypeWritter = dynamic(() => import("../TypeWritter").then(mod => mod.TypeWritter), { ssr: false });
 
 export const Welcome = memo(() => {
+  const handleResumeClick = () => {
+    window.open('/assets/resume.pdf', '_blank', 'noopener,noreferrer');
+  };
+
   return (
     <section className="relative flex min-h-screen flex-col justify-center px-8 pt-0 sm:px-8 md:px-28 md:pt-32 lg:px-32 xl:px-56 2xl:px-72">
       <SectionParticles particleCount={80} />
@@ -29,7 +33,12 @@ export const Welcome = memo(() => {
         digital solutions that are both elegant and impactful.
       </h3>
       <div className="mt-12">
-        <Button className="hover:scale-105 transition-transform duration-300">Check out my resume!</Button>
+        <Button
+          onClick={handleResumeClick}
+          className="hover:scale-105 transition-transform duration-300"
+        >
+          Check out my resume!
+        </Button>
       </div>
     </section>
   );
